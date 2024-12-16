@@ -1,0 +1,32 @@
+.errorCart {
+  background-color: white;
+  padding: 15px;
+  border-radius: 15px;
+  margin: 20px 0;
+}
+
+.button-container {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.login-button,
+.register-button,
+.close-button {
+  font-size: 15px;
+  width: 130px;
+  height: 30px;
+  padding: 5px;
+  margin-right: 10px;
+  background-color: #ff9900;
+  color: #fff;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+.close-button:hover,
+.login-button:hover,
+.register-button:hover {
+  background-color: #ffad33;
+}

@@ -1,0 +1,12 @@
+.alertContainer{
+    width: 400px auto;
+    align-items: center;
+    justify-content: center;
+}
+
+.closeAlertButton{
+    background-color: transparent;
+    justify-content: center;
+    align-items: center;
+    margin-top: -25px;
+}

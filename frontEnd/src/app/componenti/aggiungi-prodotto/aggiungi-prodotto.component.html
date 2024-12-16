@@ -1,0 +1,40 @@
+<body>
+<div class="background">
+  <div class="blur-overlay"></div>
+  <div class="container">
+    <div style="text-align:center;">
+      <h2>Aggiungi/Modifica prodotto</h2>
+      <hr flex style="margin-bottom: 25px;"/>
+    </div>
+
+    <form class="AddProductForm" [formGroup]="formAggiungiProdotto">
+      <input type="text" formControlName="id" id="id" placeholder="ID prodotto" required (input)="productExist()">
+      <select id="type" formControlName="tipo" required [(ngModel)]="selectedCategory" (change)="onValueTypeSelected($event)">
+        <option value="" disabled selected>Seleziona una categoria</option>
+        <option value="ammortizzatori" selected>Ammortizzatori</option>
+        <option value="freni">Freni</option>
+        <option value="filtri">Filtri</option>
+        <option value="illuminazioni">Illuminazioni</option>
+        <option value="oli">Oli e liquidi</option>
+        <option value="pneumatici">Pneumatici</option>
+        <option value="pulizia">Pulizia auto</option>
+        <option value="scarico">Sistema di scarico</option>
+      </select>
+
+      <div>
+        <input type="text" id="name" formControlName="nome" placeholder="Nome" required>
+      </div>
+      <textarea id="description" formControlName="descrizione" placeholder="Descrizione" required></textarea>
+      <input type="text" id="seller" formControlName="venditore" placeholder="Venditore" required>
+      <input type="number" id="price" formControlName="prezzo" placeholder="Prezzo (con la virgola)" required>
+      <input type="file" id="image" formControlName="foto" accept="image/*" single (change)="onFileChange($event)" required>
+      <p>ATTENZIONE: per l'aggiunta/modifica dei prodotti inserire TUTTI i dati, per la rimozione SOLO l'id del prodotto da rimuovere!</p>
+      <button type="submit" *ngIf="myproductSelection == false" (click)="onSubmit()">Aggiungi prodotto</button>
+      <button type="submit" *ngIf="myproductSelection == true" (click)="onSubmit()">Modifica prodotto</button>
+    </form>
+    <button class="openNewPageButton" *ngIf="myproductSelection == true" (click)="openNewProductPage()" >Apri pagina prodotto</button>
+    <button class="deleteProductButton" *ngIf="myproductSelection == true" (click)="removeProduct()">Rimuovi prodotto</button>
+  </div>
+</div>
+<app-footer></app-footer>
+</body>

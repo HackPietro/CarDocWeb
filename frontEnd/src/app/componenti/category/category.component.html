@@ -1,0 +1,115 @@
+<form [formGroup]="formRicerca" (ngSubmit)="onSearch()">
+  <div class="ricercaContainer">
+    <mat-form-field class="searchBar">
+      <mat-label>Cerca il prodotto!</mat-label>
+      <input matInput formControlName="searchWord" placeholder="Es. Filtro olio">
+    </mat-form-field>
+    <button class="searchButton" type="submit" onClick="window.open('http://localhost:4200/home','_self')">Cerca</button>
+  </div>
+</form>
+
+
+<ng-template *ngIf="!smallDevice; then desktopView else mobileView"></ng-template>
+
+<ng-template #desktopView>
+
+  <div class="category-container">
+
+  <span class="image-with-text" (click)="selectedCategoryChange('ammortizzatori')">
+    <img src='.\assets\immagini\icone\ammortizzatori.png'>
+    <span class="text">Ammortizzatori</span>
+  </span>
+
+    <span class="image-with-text" (click)="selectedCategoryChange('freni')">
+    <img src='.\assets\immagini\icone\freni.png'>
+    <span class="text">Freni</span>
+  </span>
+
+    <span class="image-with-text" (click)="selectedCategoryChange('filtri')">
+    <img src='.\assets\immagini\icone\filtro.png'>
+    <span class="text">Filtri</span>
+  </span>
+
+    <span class="image-with-text" (click)="selectedCategoryChange('illuminazione')">
+    <img src='.\assets\immagini\icone\illuminazione.png'>
+    <span class="text">Illuminazioni</span>
+  </span>
+
+    <span class="image-with-text" (click)="selectedCategoryChange('oli')">
+    <img src='.\assets\immagini\icone\olieliquidi.png'>
+    <span class="text">Oli e liquidi</span>
+  </span>
+
+    <span class="image-with-text" (click)="selectedCategoryChange('pneumatici')">
+    <img src='.\assets\immagini\icone\pneumatici.png'>
+    <span class="text">Pneumatici</span>
+  </span>
+
+    <span class="image-with-text" (click)="selectedCategoryChange('pulizia')">
+    <img src='.\assets\immagini\icone\pulizia.png'>
+    <span class="text">Pulizia auto</span>
+  </span>
+
+    <span class="image-with-text"  (click)="selectedCategoryChange('scarico')">
+    <img src='.\assets\immagini\icone\scarico.png'>
+    <span class="text">Sistema di scarico</span>
+  </span>
+
+  </div>
+</ng-template>
+
+
+<ng-template #mobileView>
+
+  <div class="TotalContainermobileCategory">
+    <button class="buttonCategory" [matMenuTriggerFor]="menu">Categorie</button>
+    <mat-menu class="matMenu" #menu="matMenu">
+
+      <div class="category-container">
+
+      <span class="image-with-text" (click)="selectedCategoryChange('ammortizzatori')">
+        <img src='.\assets\immagini\icone\ammortizzatori.png'>
+        <span class="text">Ammortizzatori</span>
+      </span>
+
+        <span class="image-with-text" (click)="selectedCategoryChange('freni')">
+        <img src='.\assets\immagini\icone\freni.png'>
+        <span class="text">Freni</span>
+      </span>
+
+        <span class="image-with-text" (click)="selectedCategoryChange('filtri')">
+        <img src='.\assets\immagini\icone\filtro.png'>
+        <span class="text">Filtri</span>
+      </span>
+
+        <span class="image-with-text" (click)="selectedCategoryChange('illuminazione')">
+        <img src='.\assets\immagini\icone\illuminazione.png'>
+        <span class="text">Illuminazioni</span>
+      </span>
+
+        <span class="image-with-text" (click)="selectedCategoryChange('oli')">
+        <img src='.\assets\immagini\icone\olieliquidi.png'>
+        <span class="text">Oli e liquidi</span>
+      </span>
+
+        <span class="image-with-text" (click)="selectedCategoryChange('pneumatici')">
+        <img src='.\assets\immagini\icone\pneumatici.png'>
+        <span class="text">Pneumatici</span>
+      </span>
+
+        <span class="image-with-text" (click)="selectedCategoryChange('pulizia')">
+        <img src='.\assets\immagini\icone\pulizia.png'>
+        <span class="text">Pulizia auto</span>
+      </span>
+
+        <span class="image-with-text"  (click)="selectedCategoryChange('scarico')">
+        <img src='.\assets\immagini\icone\scarico.png'>
+        <span class="text">Sistema di scarico</span>
+      </span>
+
+      </div>
+    </mat-menu>
+  </div>
+
+
+</ng-template>

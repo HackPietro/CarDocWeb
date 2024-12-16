@@ -1,0 +1,61 @@
+<body style="min-height: 120vh; display: flex; flex-direction: column;">
+<div style="flex: 1;">
+  <div class="profile-header">
+    <div class="profile-header__info">
+      <div class="profile-header__info-left">
+        <div class="profile-header__info-name">{{infoUtente?.nome}} {{infoUtente?.cognome}}</div>
+        <div class="profile-header__info-number">Codice fiscale: {{infoUtente?.cf}}</div>
+      </div>
+    </div>
+    <div class="profile-title-icon">
+    <span id="tornaAiMieiOrdini" onClick="window.open('http://localhost:4200/profilo', '_self')">
+      <span>&larr;</span> Torna ai miei ordini
+    </span>
+    </div>
+  </div>
+
+  <div class="profile-order__header">
+    <div>
+      <div class="profile-order__header-number">Numero dell'ordine: {{dettagliOrdine[0].numeroOrdine}}</div>
+      <div class="profile-order__header-date">Data: {{dataOrdine}}</div>
+    </div>
+  </div>
+
+
+  <div class="custom-table">
+    <table>
+      <thead>
+      <tr>
+        <th></th>
+        <th>Nome prodotto</th>
+        <th>Codice prodotto</th>
+        <th>Quantità</th>
+        <th>Prezzo</th>
+        <th>Azioni</th> <!-- Nuova colonna per il bottone -->
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let elemento of dettagliOrdine">
+        <td>
+          <img id="immagineProdottoOrdine" [src]="this.images[elemento.idProdotto]" alt="Immagine Prodotto">
+        </td>
+        <td>{{ elemento.nomeProdotto }}</td>
+        <td>{{ elemento.idProdotto }}</td>
+        <td>x{{ elemento.quantita }}</td>
+        <td>{{ elemento.prezzo }}€</td>
+        <td>
+          <button id="buttonVisualizzaProdotto" [routerLink]="'/prodotto/' + elemento.idProdotto">Visualizza Prodotto</button>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+
+</div>
+
+
+<app-footer></app-footer>
+</body>
+
+
+

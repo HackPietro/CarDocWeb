@@ -1,0 +1,75 @@
+<body>
+
+<app-category></app-category>
+
+
+
+<div class="filtriRicercaContainer">
+  <p id="risultati"><strong style="color: #333;">Risultati: {{prodotti.length}}</strong></p>
+  <form class="formFiltri" [formGroup]="formFiltri">
+    <div class="filtriContainer">
+      <select id="sort" class="orderSelect" formControlName="sort" [(ngModel)]="tipoSortValue" (change)="tipoSortValueChange($event)" required>
+        <option value="" selected disabled>Seleziona tipo di ordinamento</option>
+        <option class="optionEntry" value="crescente">Prezzo: crescente</option>
+        <option class="optionEntry" value="decrescente">Prezzo: descrescente</option>
+        <option class="optionEntry" value="A-Z">Alfabetico: A-Z</option>
+        <option class="optionEntry" value="Z-A">Alfabetico: Z-A</option>
+        <option class="optionEntry" value="maxVenduti">Più venduti</option>
+        <option class="optionEntry" value="minVenduti">Meno venduti</option>
+      </select>
+    </div>
+  </form>
+</div>
+
+
+
+
+<!--PRODOTTI-->
+<ng-container *ngIf="noProductFound; else productsFound">
+  <img id="productNotFound" src="assets/product_not_found.png" alt="No product found">
+</ng-container>
+
+<ng-template #productsFound>
+
+  <ng-template *ngIf="!smallDevice; then desktopView else mobileView"></ng-template>
+  <ng-template #desktopView>
+    <mat-grid-list [cols]="this.smallDevice ? 2 : 4" gutterSize="25px" rowHeight="470px" class="gridList">
+      <mat-grid-tile class="grid" *ngFor="let prod of prodotti">
+        <a href="http://localhost:4200/prodotto/{{prod.id}}" style="text-decoration: none; color: black;">
+          <mat-card class="cards">
+            <div class="imageContainer">
+              <img mat-card-image [src]="this.images[prod.id]" class="matCardImg" onerror="this.src='assets/no_images_found.png'">
+            </div>
+            <mat-card-footer>
+              <mat-card-title>{{prod.nome}}</mat-card-title>
+              <mat-card-subtitle>Venditore: {{prod.venditore}}, venduti: {{prod.numeroVenduti}}</mat-card-subtitle>
+              <mat-card-title>{{prod.prezzo}}€</mat-card-title>
+            </mat-card-footer>
+          </mat-card>
+        </a>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </ng-template>
+
+  <ng-template #mobileView>
+    <mat-grid-list [cols]="this.smallDevice ? 2 : 4" gutterSize="25px" rowHeight="300px" class="gridList">
+      <mat-grid-tile class="grid" *ngFor="let prod of prodotti">
+        <a href="http://localhost:4200/prodotto/{{prod.id}}" style="text-decoration: none; color: black;">
+          <mat-card class="cards">
+            <div class="imageContainer">
+              <img mat-card-image [src]="this.images[prod.id]" class="matCardImg" onerror="this.src='assets/no_images_found.png'">
+            </div>
+            <mat-card-footer>
+              <mat-card-title>{{prod.nome}}</mat-card-title>
+              <mat-card-subtitle>Venditore: {{prod.venditore}}, venduti: {{prod.numeroVenduti}}</mat-card-subtitle>
+              <mat-card-title>{{prod.prezzo}}€</mat-card-title>
+            </mat-card-footer>
+          </mat-card>
+        </a>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </ng-template>
+</ng-template>
+
+<app-footer></app-footer>
+</body>

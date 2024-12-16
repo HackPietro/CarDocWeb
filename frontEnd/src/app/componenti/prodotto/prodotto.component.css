@@ -1,0 +1,417 @@
+
+* {
+  box-sizing: border-box;
+}
+
+
+
+.background {
+  background-color: #EAEDED;
+  padding-top: 10px;
+}
+
+
+
+.container {
+  position: relative;
+  z-index: 1;
+  overflow: scroll;
+  padding: 20px;
+  margin: 40px auto;
+  background-color: rgba(255, 255, 255, 0.908);
+  border-radius: 20px;
+  max-width: 95%;
+  max-height: 85%;
+}
+
+/* Righe */
+.firstRow {
+  padding: 10px;
+  display: flex;
+  border: 2px solid #ccc;
+  overflow: hidden;
+  border-radius: 20px;
+  position: relative;
+  background-color: white;
+  margin-left: 150px;
+  margin-right: 150px;
+
+}
+
+.secondRow{
+  padding: 10px;
+  border: 2px solid #ccc;
+  border-radius: 20px;
+  margin: 10px;
+  background-color: white;
+  position: relative;
+  margin-left: 150px;
+  margin-right: 150px;
+}
+
+.thirdRow {
+  padding: 10px;
+  border: 2px solid #ccc;
+  border-radius: 20px;
+  margin: 10px;
+  background-color: white;
+  position: relative;
+  margin-left: 150px;
+  margin-right: 150px;
+}
+
+.footerDiv {
+  position: relative;
+}
+
+
+
+
+
+
+
+
+
+/* Elementi terza riga */
+#leafletMap {
+  margin-left: 5px;
+  height: 400px;
+  width: 600px;
+  border: 1px #ccc solid;
+  border-radius: 20px;
+}
+
+.reviewsBox {
+  overflow-y: scroll;
+  height: 400px;
+  width: 100%;
+}
+
+.reviews {
+  border: 2px #ccc solid;
+  border-radius: 20px;
+  margin: 8px auto;
+  padding: 15px;
+}
+
+.noReviewsFound {
+  text-align: center;
+  border: 2px #ccc solid;
+  border-radius: 20px;
+  margin: 8px auto;
+  padding: 15px;
+  font-size: 18px;
+}
+
+
+
+.removeReview {
+  text-decoration: none;
+  color: white;
+  background-color: #b30000;
+  border-radius: 5px;
+  border: 2px solid #b30000;
+}
+
+.removeReview:hover{
+  cursor: pointer;
+}
+
+
+
+/* FAB */
+.fab-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 2;
+  background-color: #ff9900;
+}
+
+.fab-button-2 {
+  position: fixed;
+  bottom: 90px;
+  right: 20px;
+  z-index: 2;
+  background-color: #ff9900;
+}
+
+.fab-menu {
+  position: fixed;
+  bottom: 23px;
+  right: 80px;
+  background-color: white;
+  border-radius: 4px;
+  padding: 8px;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.15);
+  z-index: 3;
+}
+
+.facebookButton:hover {
+  background-color: #3b5998;
+  color: #ffffff;
+}
+
+.whatsappButton:hover {
+  background-color: #25D366;
+  color: #ffffff;
+}
+
+.emailButton:hover {
+  background-color: #DB4437;
+  color: #ffffff;
+}
+
+
+/* IMMAGINE PRODOTTO */
+
+.img {
+  height: inherit;
+  margin-left: 10px;
+  margin-right: 2px;
+  border: 2px #ccc solid;
+  border-radius: 20px;
+}
+
+#relatedProductImg{
+  max-height: 220px;
+  max-width: 220px;
+  border: 2px #ccc solid;
+  border-radius: 20px;
+}
+
+.relatedProductDiv{
+  padding: 10px;
+  margin-left: 10px;
+  margin-right: 2px;
+  justify-self: center;
+  align-self: center;
+  text-align: center;
+}
+
+
+.cards {
+  padding-top: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
+  width: 280px;
+  border: 2px #ccc solid;
+  border-radius: 20px;
+  height: 380px;
+}
+
+
+
+
+/* DESCRIZIONE PRODOTTO */
+
+
+.productDescription {
+  margin-top: 10px;
+  margin-left: 20px;
+  padding: 20px;
+  display: flex;
+  height: 300px;
+  width: 100%;
+  border: 2px #ccc solid;
+  border-radius: 20px;
+  align-self: center;
+  text-align: left;
+}
+
+
+/* PULSANTI + - */
+
+.counter {
+  width: 150px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.counter input {
+  width: 50px;
+  border: 0;
+  line-height: 30px;
+  font-size: 20px;
+  text-align: center;
+  background: #0052cc;
+  color: #fff;
+  appearance: none;
+  outline: 0;
+}
+.counter span {
+  display: block;
+  font-size: 25px;
+  padding: 0 10px;
+  cursor: pointer;
+  color: #0052cc;
+  user-select: none;
+  margin: 0 5px;
+}
+
+
+/* CART BUTTON */
+
+#addCartButton {
+  font-size: 16px;
+  background-color: #ff9900;
+  color: #ffffff;
+  border: 2px #ccc solid;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  height: 40px;
+}
+
+.addCartCard{
+  padding: 60px;
+  justify-content: center;
+  height: 320px;
+  border: 2px #ccc solid;
+  border-radius: 20px;
+  margin-top: 1px;
+  margin-bottom: 0;
+}
+
+
+.cart{
+  padding: 10px;
+  justify-self: center;
+  align-self: center;
+  text-align: center;
+  margin: 10px;
+  width: 30%;
+}
+
+.counter {
+  display: flex;
+}
+
+#addCartButton:hover {
+  background-color: #ffad33;
+}
+
+
+#addCartButton:active {
+    background-color: #cc7a00;
+    transform: scale(0.8);
+
+}
+
+
+#quantityValue {
+  border-radius: 15px;
+}
+
+
+.fab-button-3 {
+  font-size: 20px;
+  width: 20px;
+  height: 12px;
+  background-color: ghostwhite;
+  margin-right: 5px;
+  margin-left: 5px;
+}
+
+.fab-button-3 mat-icon {
+  display: flex;
+  justify-content: center;
+  width: 120px;
+  color: red;
+}
+
+
+
+
+@media screen and (max-width: 600px) {
+
+  .firstRow {
+    padding: 10px;
+    display: flex;
+    border: 2px solid #ccc;
+    overflow: hidden;
+    border-radius: 20px;
+    position: relative;
+    background-color: white;
+    align-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 300px;
+    margin-left: 37px;
+    margin-bottom: 30px;
+  }
+
+  .matCardImg{
+    max-height: 150px;
+    max-width: 150px;
+    border: 2px #ccc solid;
+    border-radius: 20px;
+  }
+
+  .mat-card-title {
+    font-size: 16px;
+  }
+
+  #mat-card-content {
+    font-size: 14px;
+  }
+
+  .productDescription{
+    margin-left: 1px;
+    height: auto;
+  }
+
+  .addCartCard{
+    width: 275px;
+    margin-left: -105px;
+  }
+
+  .secondRow{
+    padding: 10px;
+    border: 2px solid #ccc;
+    border-radius: 20px;
+    background-color: white;
+    position: relative;
+    margin-left: 37px;
+    margin-right: 150px;
+    margin-bottom: 30px;
+    width: 300px;
+    height: auto;
+  }
+
+  .thirdRow {
+    padding: 10px;
+    border: 2px solid #ccc;
+    border-radius: 20px;
+    background-color: white;
+    position: relative;
+    margin-left: 37px;
+    margin-right: 150px;
+    margin-bottom: 30px;
+    width: 300px;
+  }
+
+  .cards {
+    width: 220px;
+  }
+
+
+  #relatedProductImgSmall{
+    max-height: 180px;
+    max-width: 180px;
+    border: 2px #ccc solid;
+    border-radius: 20px;
+  }
+
+}
+
+@media screen and (min-width: 601px) and (max-width: 1500px) {
+
+  .background{
+    min-width: 1200px;
+  }
+  .firstRow, .secondRow, .thirdRow{
+    min-width: 1200px;
+  }
+}

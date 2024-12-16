@@ -1,0 +1,41 @@
+<body>
+<div class="background">
+  <div class="blur-overlay"></div>
+  <div class="container">
+    <div style="text-align: center;">
+      <h2>Pannello di controllo</h2>
+    </div>
+
+    <h2 style="text-align: center;">Rimuovi utente</h2>
+    <div class="RimuoviUtenteContainer">
+      <form class="RemoveUserForm" [formGroup]="RimuoviUserForm" (ngSubmit)="onRemoveUserFormSubmit()">
+        <input type="text" formControlName="cf" placeholder="Codice fiscale Utente" required>
+        <button type="submit">Rimuovi</button>
+      </form>
+    </div>
+
+
+    <h2 style="text-align: center;">Cambia tipologia</h2>
+    <div class="TipologiaUtenteContainer">
+      <form class="TipologiaUserForm" [formGroup]="TypeUserForm" (ngSubmit)="setUserType()">
+        <input type="text" formControlName="cf" placeholder="Codice fiscale Utente" required>
+        <input type="text" formControlName="tipologia" placeholder="Tipologia Utente" required>
+        <button type="submit">Applica</button>
+      </form>
+    </div>
+
+  </div>
+
+  <div *ngIf="showSuccessMessage" class="success-message">
+    <p>Utente rimosso con successo dal sistema.</p>
+  </div>
+
+  <div *ngIf="showErrorMessage" class="error-message">
+    <p>Errore durante la rimozione. Verificare il Codice Fiscare e riprovare.</p>
+  </div>
+
+</div>
+
+<app-footer></app-footer>
+
+</body>

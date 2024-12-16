@@ -1,0 +1,184 @@
+ù/*-------------------STILE INFO SOPRA TABELLA------------------------------------*/
+
+
+
+  /* Stile generale per il container principale */
+.profile-order__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f5f5f5;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-bottom: 15px;
+}
+
+/* Stile per la sezione sinistra con numero dell'ordine e data */
+.profile-order__header > div:first-child {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.profile-order__header-number {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.profile-order__header-date {
+  color: #666;
+}
+
+
+.profile-order__header-number:last-child {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+
+.profile-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: #f5f5f5;
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 10px;
+
+}
+
+.profile-header__info {
+  display: flex;
+  align-items: center;
+}
+
+.profile-header__info-left {
+  margin-right: 20px;
+}
+
+.profile-header__info-name {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.profile-header__info-number {
+  color: #666;
+}
+
+
+#tornaAiMieiOrdini {
+  color: #ff9900;
+  cursor: pointer;
+}
+
+
+.profile-title-icon {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
+
+
+.profile-title-icon span {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+}
+
+
+/*--------------FINE STILE INFO SOPRA TABELL-----------------------*/
+
+
+
+/*-------------------------STILE TABELLA-----------------------------*/
+.custom-table {
+  width: 100%;
+  margin: 15px 0;
+  border-collapse: collapse;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Stile per l'intestazione della tabella */
+.custom-table th, .custom-table td {
+  padding: 10px 15px; /* Ridotto il padding per adattarsi al tuo stile precedente */
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+  width: 500px;
+}
+
+/* Stile per le celle dell'intestazione */
+.custom-table th {
+  background-color: #f5f5f5;
+}
+
+/* Stile per le righe pari della tabella */
+.custom-table tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+#immagineProdottoOrdine {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+
+#buttonVisualizzaProdotto{
+  background-color: #4caf50;
+  color: white;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+#buttonVisualizzaProdotto:hover {
+  background-color: #45a049;
+}
+
+/*----------------FINE STILE TABELLA*---------------------------*/
+
+
+
+
+
+
+
+/*ADATTAMENTO CSS RESPONSIVE*/
+
+@media screen and (max-width: 600px){
+  .custom-table{
+    width: auto;
+    overflow-x: scroll;
+
+  }
+
+  .profile-order__header{
+    width: auto;
+  }
+
+  .profile-header{
+    width: auto;
+  }
+  #tornaAiMieiOrdini{
+    font-size: 12px;
+  }
+}
+
+@media screen and (min-width: 601px) and (max-width: 1500px) {
+  .profile-header{
+    min-width: 1490px;
+  }
+  .profile-order__header{
+    min-width: 1490px;
+  }
+  .custom-table{
+    min-width: 1490px;
+  }
+
+}
+

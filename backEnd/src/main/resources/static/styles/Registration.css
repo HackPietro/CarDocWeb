@@ -1,0 +1,115 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-image: url("../immagini/ferrari.jpeg");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    padding: 10px;
+    backdrop-filter: blur(2px);
+}
+
+.container {
+    width: 100%;
+    max-width: 400px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 5px;
+    padding: 20px;
+}
+
+.form input {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+.form button, #loginButton {
+    margin-top: 10px;
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #ff9900;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.form select {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    color: #757575;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+.loginTitle {
+    text-align: center;
+}
+
+.error-message {
+    background-color:rgba(255, 255, 255, 0.681);
+    border: 2px solid #ff9900;
+    border-radius: 5px;
+    padding: 20px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.error-message p {
+    margin: 0;
+}
+
+.error-logo {
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    width: 48px;
+    height: 48px;
+    background-image: url("../immagini/error.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.success-message {
+    background-color:rgba(255, 255, 255, 0.681);
+    border: 2px solid #ff9900;
+    border-radius: 5px;
+    padding: 20px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.success-message p {
+    margin: 0;
+}
+
+.success-logo {
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    width: 48px;
+    height: 48px;
+    background-image: url("../immagini/success.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 15px;
+    }
+}

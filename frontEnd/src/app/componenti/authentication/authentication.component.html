@@ -1,0 +1,52 @@
+<div class="authentication-container">
+
+
+  <button mat-fab class="fab-button-3 ml auto" *ngIf="this.auth.isLoggedIn" title="Wishlist" onClick="window.open('http://localhost:4200/wishlist','_self')" style="text-decoration: none; color: black;">
+    <mat-icon>favorite</mat-icon>
+  </button>
+
+  <button mat-fab class="cartIcon" title="Carrello" onClick="window.open('http://localhost:4200/carrello','_self')" style="text-decoration: none; color: black;">
+    <mat-icon>shopping_cart</mat-icon>
+  </button>
+
+  <button mat-icon-button [matMenuTriggerFor]="menu">
+    <mat-icon>more_vert</mat-icon>
+  </button>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item onClick="window.open('http://localhost:8080/login','_self')" *ngIf="!this.auth.isLoggedIn">
+      <mat-icon>account_circle</mat-icon>
+      <span>Accedi</span>
+    </button >
+    <button mat-menu-item onClick="window.open('http://localhost:8080/registration','_self')" *ngIf="!this.auth.isLoggedIn">
+      <mat-icon>person_add</mat-icon>
+      <span>Registrati</span>
+    </button>
+    <button mat-menu-item *ngIf="this.auth.isLoggedIn" routerLink="profilo">
+      <mat-icon>account_circle</mat-icon>
+      <span style="font-size: 15px;">Profilo</span>
+    </button>
+    <button mat-menu-item *ngIf="this.auth.isLoggedIn && this.auth.isAdmin()" routerLink="aggiungi-prodotto">
+      <mat-icon>create</mat-icon>
+      <span style="font-size: 15px;">Gestione prodotti</span>
+    </button>
+    <button mat-menu-item *ngIf="this.auth.isLoggedIn && this.auth.isAdmin()" routerLink="admin-panel">
+      <mat-icon>security</mat-icon>
+      <span style="font-size: 15px;">Pannello di controllo</span>
+    </button>
+    <button mat-menu-item *ngIf="this.auth.isLoggedIn" (click)="this.auth.logout()" routerLink="home">
+      <mat-icon>logout</mat-icon>
+      <span style="font-size: 15px;">Esci</span>
+    </button>
+  </mat-menu>
+</div>
+
+<div class="logo-container">
+  <img id="logo" src='.\assets\CarDocLogo.png' alt="Foto logo"
+       onClick="window.open('http://localhost:4200/home','_self')"
+       (click)="resetLocalStorage()">
+</div>
+<router-outlet></router-outlet>
+
+
+
+

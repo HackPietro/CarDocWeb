@@ -1,0 +1,87 @@
+section {
+  display: table;
+}
+
+
+.authentication-container {
+  width: 100%;
+  height: 0%;
+  text-align: right;
+  background-color: #132530;
+  color: white;
+}
+
+
+
+/*  PARTE DASHBOARD  */
+.home {
+  align-items: center;
+}
+
+.logo-container {
+  width: auto;
+  text-align: center;
+  background-color: #132530;
+  padding: 0px;
+}
+
+#logo {
+  width: 10%;
+  cursor: pointer;
+}
+
+.cartIcon {
+  font-size: 20px; /* Regola la dimensione del font */
+  width: 25px; /* Regola la larghezza del pulsante */
+  height: 25px; /* Regola l'altezza del pulsante */
+  background-color: #132530;
+  margin-right: 15px;
+  margin-left: 5px;
+}
+
+.cartIcon mat-icon {
+  display: flex;
+  justify-content: center;
+  width: 120px;
+  color: white;
+}
+
+.fab-button-3 {
+  font-size: 20px; /* Regola la dimensione del font */
+  width: 25px; /* Regola la larghezza del pulsante */
+  height: 25px; /* Regola l'altezza del pulsante */
+  background-color: #132530;
+  margin-right: 10px;
+  margin-left: 5px;
+}
+
+.fab-button-3 mat-icon {
+  display: flex;
+  justify-content: center;
+  width: 120px;
+  color: red;
+}
+
+
+@media screen and (max-width: 600px){
+
+  #logo {
+    width: 45%;
+    cursor: pointer;
+  }
+
+  .cartIcon {
+    margin-right: 2px;
+  }
+
+}
+
+@media screen and (min-width: 601px) and (max-width: 1500px) {
+  .authentication-container{
+    min-width: 1490px;
+  }
+
+  .logo-container{
+    min-width: 1490px;
+  }
+}

@@ -1,0 +1,101 @@
+.alertContainer{
+  width: 400px;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  height: 500px;
+  text-align: center;
+  border-radius: 10px;
+}
+
+.descriptionField {
+  width: 80%;
+  height: 50%;
+  margin-bottom: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+  max-width: 300px;
+  max-height: 250px;
+  min-width: 150px;
+  min-height: 30px;
+}
+
+.valutazione {
+  display: inline-block;
+  position: relative;
+  height: 30px;
+  line-height: 30px;
+  font-size: 30px;
+}
+
+.valutazione label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  cursor: pointer;
+}
+
+.valutazione label:last-child {
+  position: static;
+}
+
+.valutazione label:nth-child(1) {
+  z-index: 5;
+}
+
+.valutazione label:nth-child(2) {
+  z-index: 4;
+}
+
+.valutazione label:nth-child(3) {
+  z-index: 3;
+}
+
+.valutazione label:nth-child(4) {
+  z-index: 2;
+}
+
+.valutazione label:nth-child(5) {
+  z-index: 1;
+}
+
+.valutazione label input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+}
+
+.valutazione label .icon {
+  float: left;
+  color: transparent;
+}
+
+.valutazione label:last-child .icon {
+  color: #000;
+}
+
+.valutazione:not(:hover) label input:checked ~ .icon, .valutazione:hover label:hover input ~ .icon {
+  color: gold;
+}
+
+.valutazione label input:focus:not(:checked)  .icon:last-child {
+  color: #000;
+  text-shadow: 0 0 5px gold;
+}
+
+.closeAlertButton{
+  background-color: transparent;
+  justify-content: center;
+  align-items: center;
+}
+
+#pubblicaButton {
+  background-color: #ff9900;
+  border-radius: 20px;
+}
+
+#pubblicaButton:hover {
+  transform: scale(0.9);
+}

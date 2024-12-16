@@ -1,0 +1,84 @@
+<body>
+<app-category></app-category>
+<div>
+  <div class="background">
+    <div class="totalCartContainer">
+      <ng-container *ngIf="cart.length != 0">
+        <div class="container">
+          <div class="card-table">
+            <h2 class="card-title">Carrello</h2>
+            <div class="card-product">
+              <table>
+                <tr>
+                  <th>Immagine prodotto</th>
+                  <th>Nome</th>
+                  <th>Venditore</th>
+                  <th>Prezzo</th>
+                  <th class="azioni">Azioni</th>
+                </tr>
+                <tbody>
+                <tr *ngFor="let prodotto of cart; let i = index">
+                  <td>
+                    <a href="http://localhost:4200/prodotto/{{prodotto.id}}" style="text-decoration: none; color: black;">
+                      <mat-card class="immagine">
+                        <div>
+                          <img mat-card-image [src]="this.images[prodotto.id]" class="matCardImg" onerror="this.src='assets/no_images_found.png'">
+                        </div>
+                      </mat-card>
+                    </a>
+                  </td>
+                  <td>{{ prodotto.nome }}</td>
+                  <td>{{ prodotto.venditore }}</td>
+                  <td>{{ prodotto.prezzo | currency:'EUR':'symbol':'1.2-2' }}</td>
+                  <td>
+                    <div class="counter">
+                      <input id="quantityValue" type="text" value="{{this.quantita[prodotto.id]}}" disabled>
+                    </div>
+                    <div>
+                      <button mat-fab class="delete-button" (click)="removeItem(prodotto.id)">
+                        <mat-icon>delete</mat-icon>
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+                </tbody>
+                <tfoot>
+                <tr class="bottoni">
+                  <td colspan="3"></td>
+                  <td class="total-block">
+                    <strong>Totale: {{ grandTotal | currency:'EUR':'symbol':'1.2-2' }}</strong>
+                  </td>
+                  <td>
+                    <button class="btn svuota-carrello" (click)="removeAll(utente)">Svuota Carrello</button>
+                  </td>
+                  <td>
+                    <button class="btn procedi" (click)="completaAcquisto()">Procedi con l'ordine</button>
+                  </td>
+                </tr>
+                </tfoot>
+              </table>
+            </div>
+          </div>
+        </div>
+      </ng-container>
+
+
+      <div class="cartVuoto">
+        <ng-container *ngIf="cart.length === 0">
+          <div class="card">
+            <h5 class="card-title">Carrello</h5>
+          </div>
+          <div class="center">
+            <img class="immaginecartvuoto" src="assets/cartvuoto.jpg" alt="">
+            <h3 id="carrello_vuoto">Carrello vuoto!</h3>
+            <h5 id="aggiungi">Aggiungi qualcosa al tuo carrello</h5>
+            <button onClick="window.open('http://localhost:4200/home','_self')" class="compraOra">Compra ora</button>
+          </div>
+        </ng-container>
+      </div>
+    </div>
+  </div>
+  <app-footer class="footer"></app-footer>
+</div>
+
+</body>

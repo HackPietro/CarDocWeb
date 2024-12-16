@@ -1,0 +1,120 @@
+<body>
+<div class="container">
+  <div class="acquistoDiv">
+    <mat-vertical-stepper [animationDuration]="duration.value">
+
+      <mat-step [stepControl]="nameFormGroup">
+        <form [formGroup]="nameFormGroup">
+          <ng-template matStepLabel>Nome</ng-template>
+          <mat-form-field>
+            <input matInput placeholder="Es. Mario" formControlName="name" required>
+          </mat-form-field>
+          <div>
+            <button mat-button matStepperNext>Successivo</button>
+          </div>
+        </form>
+      </mat-step>
+
+      <mat-step [stepControl]="surnameFormGroup">
+        <form [formGroup]="surnameFormGroup">
+          <ng-template matStepLabel>Cognome</ng-template>
+          <mat-form-field>
+            <input matInput placeholder="Es. Rossi" formControlName="surname" required>
+          </mat-form-field>
+          <div>
+            <button mat-button matStepperPrevious>Precedente</button>
+            <button mat-button matStepperNext>Successivo</button>
+          </div>
+        </form>
+      </mat-step>
+
+      <mat-step [stepControl]="countryFormGroup">
+        <form [formGroup]="countryFormGroup">
+          <ng-template matStepLabel>Nazione</ng-template>
+          <mat-form-field>
+            <input matInput placeholder="Es. Italia" formControlName="country" required>
+          </mat-form-field>
+          <div>
+            <button mat-button matStepperPrevious>Precedente</button>
+            <button mat-button matStepperNext>Successivo</button>
+          </div>
+        </form>
+      </mat-step>
+
+      <mat-step [stepControl]="provinceFormGroup">
+        <form [formGroup]="provinceFormGroup">
+          <ng-template matStepLabel>Provincia</ng-template>
+          <mat-form-field>
+            <input matInput placeholder="Es. Roma" formControlName="province" required>
+          </mat-form-field>
+          <div>
+            <button mat-button matStepperPrevious>Precedente</button>
+            <button mat-button matStepperNext>Successivo</button>
+          </div>
+        </form>
+      </mat-step>
+
+      <mat-step [stepControl]="capFormGroup">
+        <form [formGroup]="capFormGroup">
+          <ng-template matStepLabel>CAP</ng-template>
+          <mat-form-field>
+            <input matInput placeholder="Es. 87100" formControlName="cap" required>
+          </mat-form-field>
+          <div>
+            <button mat-button matStepperPrevious>Precedente</button>
+            <button mat-button matStepperNext>Successivo</button>
+          </div>
+        </form>
+      </mat-step>
+
+      <mat-step [stepControl]="addressFormGroup">
+        <form [formGroup]="addressFormGroup">
+          <ng-template matStepLabel>Indirizzo</ng-template>
+          <mat-form-field>
+            <input matInput placeholder="Es. Via Roma n.12" formControlName="address" required>
+          </mat-form-field>
+          <div>
+            <button mat-button matStepperPrevious>Precedente</button>
+            <button mat-button matStepperNext>Successivo</button>
+          </div>
+        </form>
+      </mat-step>
+
+      <mat-step [stepControl]="paymentFormGroup">
+        <form [formGroup]="paymentFormGroup">
+          <ng-template matStepLabel>Pagamento</ng-template>
+
+          <mat-card-title>Numero carta</mat-card-title>
+          <mat-form-field>
+            <input matInput placeholder="Es. 5412 7512 3412 3456" formControlName="cardNumber" required>
+          </mat-form-field>
+
+          <mat-card-title>Data scadenza</mat-card-title>
+          <mat-form-field>
+            <input matInput placeholder="Es. 12/2027" formControlName="expiryDate" required>
+          </mat-form-field>
+
+          <mat-card-title>CVC</mat-card-title>
+          <mat-form-field>
+            <input matInput placeholder="789" formControlName="cvc" required>
+          </mat-form-field>
+          <div>
+            <button mat-button matStepperPrevious>Precedente</button>
+            <button mat-button matStepperNext>Successivo</button>
+          </div>
+        </form>
+      </mat-step>
+
+      <mat-step>
+        <ng-template matStepLabel>Acquista</ng-template>
+        <div>
+          <button mat-button (click)="annulla()">Annulla</button>
+          <button mat-button (click)="isFormValid()">Acquista</button>
+        </div>
+      </mat-step>
+    </mat-vertical-stepper>
+  </div>
+
+
+</div>
+</body>

@@ -1,0 +1,39 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  max-width: 400px;
+  max-height: 580px;
+  margin: 0 auto;
+  overflow: auto;
+  padding: 20px;
+}
+
+.acquistoDiv {
+  display: flex;
+  padding: 50px;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+
+
+label {
+  margin-right: 4px;
+}
+
+/*selected*/
+::ng-deep .mat-step-header .mat-step-icon-selected {
+  background-color: #ff9900;
+}
+
+/**/
+::ng-deep .mat-step-header .mat-step-icon-state-edit {
+  background-color: #ff9900;
+}
+
+
+

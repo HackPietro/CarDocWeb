@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="it" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Accedi!</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:href="@{/styles/Login.css}" />
+</head>
+<body>
+<div class="container">
+    <div style="text-align:center;">
+        <h2>Accedi</h2>
+    </div>
+    <div th:if="${errorMessage}" class="error-message">
+        <div class="error-logo"></div>
+        <p th:text="${errorMessage}"></p>
+    </div>
+    <form class="form" th:action="@{/doLogin}" method="post">
+        <input type="email" id="email" name="email" placeholder="Email" required />
+        <input type="password" id="password" name="password" placeholder="Password" required />
+        <a href="http://localhost:4200/password-recovery">Password dimenticata?</a>
+        <button type="submit">Accedi</button>
+        <button type="button" onclick="window.location.href='http://localhost:4200/home';">Torna alla home</button>
+    </form>
+</div>
+</body>
+</html>

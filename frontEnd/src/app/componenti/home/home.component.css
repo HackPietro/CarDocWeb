@@ -1,0 +1,175 @@
+body {
+  height: auto;
+  background-color: #EAEDED;
+}
+
+
+
+/*     PARTE CARDS      */
+.mat-grid-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.cards {
+  width: 100%;
+  border-radius: 20px;
+  border: lightgray 1px solid !important;
+}
+
+.cards:hover {
+  cursor: pointer;
+  border: #ff9900 2px solid !important;
+}
+
+.gridList {
+  margin-top: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-bottom: 10px;
+}
+
+.matCardImg {
+  width: 80%;
+  height: 80%;
+  padding: 10px;
+  object-fit: contain;
+}
+
+.imageContainer{
+  width: 300px;
+  height: 300px;
+  display: flex;
+  border-radius: 20px;
+  align-items: center;
+  justify-content: center;
+  margin: 20px;
+}
+
+mat-card-title,
+mat-card-subtitle {
+  margin-left: 20px;
+}
+
+#productNotFound {
+  display: block;
+  margin: auto;
+  width: 50%;
+  max-width: 400px;
+  max-height: 400px;
+  padding: 20px;
+}
+
+
+/* ORDINAMENTO */
+.filtriRicercaContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px;
+  padding: 10px;
+  background-color: #f4f4f4;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.formFiltri {
+  display: flex;
+  flex-direction: column;
+  width: 280px;
+}
+
+.filtriContainer {
+  display: flex;
+  margin-top: 10px;
+}
+
+.orderSelect {
+  width: 100%;
+  padding: 8px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #fff;
+  cursor: pointer;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.optionEntry {
+  padding: 8px;
+}
+
+.orderSelect:focus {
+  outline: none;
+  border-color: #3498db;
+  box-shadow: 0 0 5px rgba(52, 152, 219, 0.5);
+}
+
+#risultati {
+  font-size: 18px;
+  margin: 0 0 0px;
+}
+
+
+@media screen and (max-width: 600px) {
+
+  .imageContainer{
+    width: 110px;
+    height: 110px;
+    margin:10px
+  }
+
+  .matCardImg {
+    width: 80%;
+    height: 80%;
+    padding: 1px;
+  }
+
+
+  mat-card-title {
+    font-size: 14px;
+  }
+
+  mat-card-subtitle {
+    font-size: 12px;
+  }
+
+  .cards {
+    width: 100%;
+    height: 280px;
+  }
+
+
+  #productNotFound {
+    width: 70%;
+    max-width: 400px;
+    max-height: 400px;
+    padding: 20px;
+  }
+
+
+  .formFiltri {
+    transform: scale(0.9);
+  }
+
+  .orderSelect {
+    width: 250px;
+  }
+
+  #risultati {
+    font-size: 14px;
+  }
+
+}
+
+@media screen and (min-width: 601px) and (max-width: 1500px) {
+  .mat-grid-list{
+    width: 1450px;
+  }
+}
+
+
+
+
+
+

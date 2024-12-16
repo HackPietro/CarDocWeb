@@ -1,0 +1,128 @@
+
+
+<app-category></app-category>
+
+
+<div class="background">
+  <div class="firstRow">
+    <div class="singleProductImage">
+      <img class="img" [src]="imagesSingleProduct" class="matCardImg">
+    </div>
+
+    <mat-card class="productDescription">
+      <mat-card-title id="titleProduct">{{nome}}</mat-card-title>
+      <mat-card-content id="descriptionProduct">{{descrizione}}</mat-card-content>
+    </mat-card>
+
+    <div class="cart">
+      <mat-card class="addCartCard">
+        <mat-card-title>{{prezzo}}€</mat-card-title>
+        <div class="counter">
+          <span class="down">-</span>
+          <input id="quantityValue" type="text" value="1" disabled>
+          <span class="up">+</span>
+          <button mat-fab class="fab-button-3 ml auto" *ngIf="this.auth.isLoggedIn" title="Wishlist" (click)="addToWishlist()">
+            <mat-icon>favorite</mat-icon>
+          </button>
+        </div>
+
+        <button id="addCartButton" (click)="addToCart()">Aggiungi al carrello</button>
+        <mat-card-footer>Pagamento: Transazione sicura</mat-card-footer>
+        <mat-card-footer>Spedizione: CarDoc</mat-card-footer>
+        <mat-card-footer>Venditore: {{venditore}}</mat-card-footer>
+      </mat-card>
+    </div>
+  </div>
+
+
+  <div class="secondRow">
+    <div class="reviewsBox">
+      <p class="noReviewsFound" *ngIf="recensioni.length == 0">Non sono presenti recensioni per questo prodotto.</p>
+      <div class="reviews" *ngFor="let recensione of recensioni; index as i">
+        <p>Scritta da: {{recensione.utente}}</p>
+        <p>Recensione: {{recensione.contenuto}}</p>
+        <p>Valutazione: {{recensione.rating}}/5</p>
+        <div *ngIf="this.auth.isLoggedIn && (this.auth.isAdmin() || checkIfSameReviewOwner(recensione))"><a
+          (click)="deleteRecensione(recensione.id)" class="removeReview">Rimuovi recensione</a></div>
+      </div>
+    </div>
+  </div>
+
+
+  <ng-template *ngIf="!smallDevice; then desktopView else mobileView"></ng-template>
+  <ng-template #desktopView>
+    <div class="thirdRow">
+      <div class="relatedProductDiv">
+        <h1>Articoli correlati:</h1>
+        <mat-grid-list [cols]=5 gutterSize="25px" rowHeight="470px" class="relatedProductMat">
+          <mat-grid-tile *ngFor="let prod of prodottiCorrelati">
+            <a href="http://localhost:4200/prodotto/{{prod.id}}" style="text-decoration: none; color: black;">
+              <mat-card class="cards">
+                <div class="relatedImageContainer">
+                  <img id="relatedProductImg" [src]="this.relatedProductimages[prod.id]"
+                       onerror="this.src='assets/no_images_found.png'">
+                </div>
+                <mat-card-footer>
+                  <mat-card-title>{{prod.nome}}</mat-card-title>
+                  <mat-card-subtitle>{{prod.venditore}}</mat-card-subtitle>
+                  <mat-card-title>{{prod.prezzo}}€</mat-card-title>
+                </mat-card-footer>
+              </mat-card>
+            </a>
+          </mat-grid-tile>
+        </mat-grid-list>
+      </div>
+    </div>
+  </ng-template>
+
+  <ng-template #mobileView>
+    <div class="thirdRow">
+      <div class="relatedProductDiv">
+        <h1>Articoli correlati:</h1>
+        <mat-grid-list [cols]=1 gutterSize="25px" rowHeight="380px" class="relatedProductMat">
+          <mat-grid-tile *ngFor="let prod of prodottiCorrelati">
+            <a href="http://localhost:4200/prodotto/{{prod.id}}" style="text-decoration: none; color: black;">
+              <mat-card class="cards">
+                <div class="relatedImageContainer">
+                  <img id="relatedProductImgSmall" [src]="this.relatedProductimages[prod.id]"
+                       onerror="this.src='assets/no_images_found.png'">
+                </div>
+                <mat-card-footer>
+                  <mat-card-title>{{prod.nome}}</mat-card-title>
+                  <mat-card-subtitle>Venditore: {{prod.venditore}}, venduti: {{prod.numeroVenduti}}</mat-card-subtitle>
+                  <mat-card-title>{{prod.prezzo}}€</mat-card-title>
+                </mat-card-footer>
+              </mat-card>
+            </a>
+          </mat-grid-tile>
+        </mat-grid-list>
+      </div>
+    </div>
+  </ng-template>
+
+  <div class="footerDiv">
+    <app-footer></app-footer>
+  </div>
+
+</div>
+
+
+<button mat-fab class="fab-button" (click)="shareAction()" title="Condividi prodotto">
+  <mat-icon>share</mat-icon>
+</button>
+<div class="fab-menu" *ngIf="menuOpen">
+  <button class="facebookButton" mat-button (click)="shareTo('facebook')">
+    <fa-icon [icon]="faFacebook" style="font-size: 20px;"></fa-icon>
+  </button>
+  <button class="whatsappButton" mat-button (click)="shareTo('whatsapp')">
+    <fa-icon [icon]="faWhatsapp" style="font-size: 20px;"></fa-icon>
+  </button>
+  <button class="emailButton" mat-button (click)="shareTo('mail')">
+    <fa-icon [icon]="faEnvelope" style="font-size: 20px;"></fa-icon>
+  </button>
+</div>
+
+<button mat-fab class="fab-button-2" (click)="addReview()" title="Aggiungi recensione" *ngIf="this.auth.isLoggedIn">
+  <mat-icon>add_circle</mat-icon>
+</button>
+
