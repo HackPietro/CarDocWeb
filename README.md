@@ -1,0 +1,1 @@
+Progetto universitario per il corso di Web Applications, incentrato sullo sviluppo di un'applicazione web. Il backend è stato implementato in Java, mentre il frontend è stato sviluppato utilizzando HTML, CSS e TypeScript.
