@@ -181,4 +181,4 @@ Il file [`CarDoc.pdf`](./CarDoc.pdf) descrive scopo e funzionalità dell'applica
 
 ## Autore
 
-**Pietro Cimino** · [@HackPietro](https://github.com/HackPietro)
+**Pietro Cimino** · [@HackPietro](https://github.com/HackPietro), **Francesco Campagna**, **Cataldo Federico**, **Marco Picerno**
